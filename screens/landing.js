@@ -22,7 +22,7 @@ export default function Landing(){
                 <Text style={styles.TextBtn}>로그인</Text>
             </TouchableOpacity>
             <OrSVG  width={320} style={styles.pad}/>
-            <TouchableOpacity style={styles.Btn2} onPress={() => navigation.navigate('Singup')} activeOpacity={0.9}>
+            <TouchableOpacity style={styles.Btn2} onPress={() => navigation.navigate('Signup')} activeOpacity={0.9}>
                 <Text style={styles.TextBtn2}>회원가입</Text>
             </TouchableOpacity>
             

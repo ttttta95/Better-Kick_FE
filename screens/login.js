@@ -27,7 +27,6 @@ export default function Login(){
                 </View>
                 
                 <View style={styles.inputBox}> 
-                    <Pawword />
                     <TextInput
                     style={styles.input}
                         placeholder="비밀번호"
@@ -36,13 +35,13 @@ export default function Login(){
                         />
                 </View>
 
-                <Text>
+                <Text style={styles.}>
                     로그인 상태 유지하기
                 </Text>
                 <TouchableOpacity style={styles.Btn}>
                 <Text style={styles.TextBtn}>로그인</Text>
                 </TouchableOpacity>
-                <View style={fn}>
+                <View style={styles.fn}>
                     <Text>아이디 찾기</Text>
                     <Text>비밀번호 재설정</Text>
                     <Text>회원가입</Text>
@@ -90,15 +89,17 @@ const styles = StyleSheet.create({
     },
     title:{
         textAlign:'center',
-        fontSize:24,
+        fontSize:38,
         fontWeight:'600',
         marginBottom:10,
     },
     Btn:{
-        width:300,
+        width:150,
         padding:10,
         borderRadius:8,
-        backgroundColor:'#CA848A'
+        backgroundColor:'#CA848A',
+        marginTop:20,
+        alignSelf:'center',
     },
     TextBtn:{
         textAlign:'center',
@@ -107,6 +108,7 @@ const styles = StyleSheet.create({
         color:'white',
     },
     section:{
-        height:500
+        height:500,
+        gap:20,
     }
 })
