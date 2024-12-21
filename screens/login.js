@@ -2,6 +2,9 @@ import { StyleSheet, Text, View, TextInput,  TouchableOpacity } from 'react-nati
 import Logo from '../assets/logo.svg';
 import People from '../assets/peopleIcon.svg';
 import Pawword from '../assets/passwordIcon.svg';
+import Check from '../assets/check.svg';
+
+import Footer from './components/footer'
 
 import { useState } from 'react';
 
@@ -36,27 +39,42 @@ export default function Login(){
                         />
                 </View>
 
-                <Text>
-                    로그인 상태 유지하기
-                </Text>
+                <View style={styles.ugi}>
+                    <Check  />
+                    <Text style={[{paddingLeft:10}]}>
+                        로그인 상태 유지하기
+                    </Text>
+                    
+                </View>
+                
                 <TouchableOpacity style={styles.Btn}>
                 <Text style={styles.TextBtn}>로그인</Text>
                 </TouchableOpacity>
-                <View style={fn}>
+                <View style={styles.fn}>
                     <Text>아이디 찾기</Text>
                     <Text>비밀번호 재설정</Text>
                     <Text>회원가입</Text>
                 </View>
             </View>
-            
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    fn:{
+
+    ugi:{
         display:'flex',
-        flexDirection:'row'
+        flexDirection:'row',
+        alignItems:'center',
+        width:280,
+        marginBottom:20,
+    },
+    fn:{
+        marginTop:20,
+        width:260,
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-around'
     },
     logo:{
         position:'absolute',
@@ -73,6 +91,7 @@ const styles = StyleSheet.create({
 
     },
     inputBox:{
+        marginBottom:15,
         display:'flex',
         flexDirection:'row',
         alignItems:'center',
@@ -92,7 +111,7 @@ const styles = StyleSheet.create({
         textAlign:'center',
         fontSize:24,
         fontWeight:'600',
-        marginBottom:10,
+        marginBottom:40,
     },
     Btn:{
         width:300,
@@ -107,6 +126,8 @@ const styles = StyleSheet.create({
         color:'white',
     },
     section:{
-        height:500
+        display:'flex',
+        alignItems:'center',
+        height:380,
     }
 })

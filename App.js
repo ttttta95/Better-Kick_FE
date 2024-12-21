@@ -8,6 +8,7 @@ import Survay from './screens/survay';
 import Result from './screens/result';
 import Mypage from './screens/mypage';
 import Main from './screens/main';
+import Storage from './screens/storage';
 
 const Stack = createStackNavigator();
 
@@ -48,6 +49,11 @@ export default function App(){
         <Stack.Screen
             name='Main'
             component={Main}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='Storage'
+            component={Storage}
             options={{ headerShown: false }}
           />
       </Stack.Navigator>
