@@ -36,10 +36,17 @@ export default function Login(){
                         />
                 </View>
 
+                <Text>
+                    로그인 상태 유지하기
+                </Text>
                 <TouchableOpacity style={styles.Btn}>
                 <Text style={styles.TextBtn}>로그인</Text>
                 </TouchableOpacity>
-
+                <View style={fn}>
+                    <Text>아이디 찾기</Text>
+                    <Text>비밀번호 재설정</Text>
+                    <Text>회원가입</Text>
+                </View>
             </View>
             
         </View>
@@ -47,6 +54,10 @@ export default function Login(){
 }
 
 const styles = StyleSheet.create({
+    fn:{
+        display:'flex',
+        flexDirection:'row'
+    },
     logo:{
         position:'absolute',
         left:20,
