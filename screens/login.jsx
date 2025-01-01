@@ -3,14 +3,41 @@ import Logo from '../assets/logo.svg';
 import People from '../assets/peopleIcon.svg';
 import Pawword from '../assets/passwordIcon.svg';
 import Check from '../assets/check.svg';
-
-import Footer from './components/footer'
-
+import { IPContext, UserContext } from '../contexts';
+import { useContext } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 
 export default function Login(){
+    const navigation = useNavigation();
+    const {IP} = useContext(IPContext);
     const [id, setId] = useState('');
     const [pw, setPw] = useState('');
+    const { settingId } = useContext(UserContext);
+    const postData = async () =>{
+        try{
+            const res = await fetch(`http://${IP}/user/login`, {
+                method:'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    user_id:id,
+                    password:pw
+                })
+            })
+
+            if(res.ok){
+                settingId(id);
+                navigation.navigate('Main', { userId: id });
+            }
+            else{
+                console.log("ㅗㅗ");
+            }
+        }catch(error){
+            console.log(error);
+        }
+    }
     return(
         <View style={styles.container}>
             
@@ -34,6 +61,7 @@ export default function Login(){
                     <TextInput
                     style={styles.input}
                         placeholder="비밀번호"
+                        secureTextEntry={true}
                         onChangeText={setPw}
                         value={pw}
                         />
@@ -47,7 +75,7 @@ export default function Login(){
                     
                 </View>
                 
-                <TouchableOpacity style={styles.Btn}>
+                <TouchableOpacity style={styles.Btn} onPress={postData}>
                 <Text style={styles.TextBtn}>로그인</Text>
                 </TouchableOpacity>
                 <View style={styles.fn}>

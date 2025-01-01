@@ -9,7 +9,7 @@ export default function Landing(){
     return(
         <View style={styles.container}>
             <View style={styles.Wrap}>
-            <Text style={styles.Title}>당신의 스트레스 없는 나날을 위해</Text>
+            <Text style={styles.Title1}>당신의 스트레스 없는 나날을 위해</Text>
             <Text style={styles.Title2}>Better Kick</Text>
                 <View>
                     <Logo width={150}/>
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
     },
-    Title:{
+    Title1:{
         marginTop:60,
         width:350,
         color:'#CA848A',
